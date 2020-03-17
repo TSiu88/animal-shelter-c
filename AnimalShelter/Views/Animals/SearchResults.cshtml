@@ -1,0 +1,39 @@
+@{
+  Layout = "_Layout";
+}
+
+@using AnimalShelter.Models;
+@model List<AnimalShelter.Models.Animal>;
+
+<div class="jumbotron">
+<h2>Animals found by Search</h2>
+</div>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Type</th>
+    <th>Name</th>
+  </tr>
+  
+  @foreach (Animal animal in Model)
+  {
+    <tr>
+      <td>@Html.ActionLink($"{animal.AnimalId} ","Details", new { id = animal.AnimalId })</td>
+      <td>@Html.ActionLink($"{animal.Type} ","Details", new { id = animal.AnimalId })</td>
+      <td>@Html.ActionLink($"{animal.Name} ","Details", new { id = animal.AnimalId })</td>
+    </tr>
+  }
+</table>
+}
+<div class="links">
+  <div class="link">
+    <p>@Html.ActionLink("Add new animal", "Create")</p>
+  </div>
+  <div class="link">
+    <p>@Html.ActionLink("List of Animals", "Index")</p>
+  </div>
+  <div class="link">
+    <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  </div>
+</div>

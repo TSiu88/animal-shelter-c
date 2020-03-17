@@ -3,10 +3,10 @@
 }
 
 @using AnimalShelter.Models;
-@model List<AnimalShelter.Models.Animal>;
+@model AnimalShelter.Models.Animal;
 
 <div class="form">
-  @using (Html.BeginForm())
+  @using (Html.BeginForm("SearchResults", "Animals", FormMethod.Post))
   {
     @* @Html.RadioButtonFor(a => a.Search,"AnimalId")
     @Html.RadioButtonFor(a => a.Search,"Type") 
@@ -16,5 +16,20 @@
     @Html.RadioButtonFor(a => a.Search,"Breed")    *@
     @Html.LabelFor(model => model.Type)
     @Html.TextBoxFor(model => model.Type)
+
+    @* @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name) *@
     <input type="submit" value="Find animal" class="btn btn-default" />
-  }   
+  }
+
+<div class="links">
+  <div class="link">
+    <p>@Html.ActionLink("Add new animal", "Create")</p>
+  </div>
+  <div class="link">
+    <p>@Html.ActionLink("List of Animals", "Index")</p>
+  </div>
+  <div class="link">
+    <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  </div>
+</div>   

@@ -89,17 +89,16 @@ namespace AnimalShelter.Controllers
 
     public ActionResult Search()
     {
-      Animal someAnimal = new Animal();
-      return View(someAnimal);
+      return View();
     }
 
     [HttpPost]
-     public ActionResult Search(string searchCriteria)
-     {
-      List<Animal> allModels = _db.Animals.ToList();
-      List<Animal> foundModels = allModels.FindAll(x => x.Type == searchCriteria);
-      return RedirectToAction("Index", foundModels);  
-     }
-
+    public ActionResult SearchResults(Animal searchAnimal)
+    {
+    string searchCriteria = searchAnimal.Type.ToLower();
+    List<Animal> allModels = _db.Animals.ToList();
+    List<Animal> foundModels = allModels.FindAll(x => x.Type.ToLower() == searchCriteria);
+    return View(foundModels);  
+    }
   }
 }
