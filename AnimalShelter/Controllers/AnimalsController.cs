@@ -70,5 +70,22 @@ namespace AnimalShelter.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult SortByType()
+    {
+      List<Animal> model = _db.Animals.ToList();
+      List<Animal> sortedModel = new List<Animal>{};
+      sortedModel = model.OrderBy(x => x.Type).ToList();
+      return View(sortedModel);
+    }
+
+    public ActionResult SortByDate()
+    {
+      List<Animal> model = _db.Animals.ToList();
+      List<Animal> sortedModel = new List<Animal>{};
+      sortedModel = model.OrderBy(x => x.DateAdmittance).ToList();
+      return View(sortedModel);
+    }    
+
   }
 }

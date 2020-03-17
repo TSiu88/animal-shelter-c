@@ -4,25 +4,35 @@
 
 @model AnimalShelter.Models.Animal
 
-<h4>Add a new animal</h4>
+<div class="jumbotron">
+  <h2>Add a new animal</h2>
+</div>
 
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(model => model.Type)
-    @Html.TextBoxFor(model => model.Type)
+<div class="form">
+  @using (Html.BeginForm())
+  {
+      @Html.LabelFor(model => model.Type)
+      @Html.TextBoxFor(model => model.Type)
+      <br>
+      <br>
+      @Html.LabelFor(model => model.Name)
+      @Html.TextBoxFor(model => model.Name)
+      <br>
+      <br>
+      @Html.LabelFor(model => model.Gender)
+      @Html.TextBoxFor(model => model.Gender)
+      <br>
+      <br>
+      @Html.LabelFor(model => model.DateAdmittance)
+      @Html.TextBoxFor(model => model.DateAdmittance, new { @type = "date"})
+      <br>
+      <br>
+      @Html.LabelFor(model => model.Breed)
+      @Html.TextBoxFor(model => model.Breed)
+      <br>
+      <br>
+      <input type="submit" value="Add new animal" class="btn btn-default" />
+  }
+</div>
 
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
-
-    @Html.LabelFor(model => model.Gender)
-    @Html.TextBoxFor(model => model.Gender)
-
-    @Html.LabelFor(model => model.DateAdmittance)
-    @Html.TextBoxFor(model => model.DateAdmittance, new { @type = "date"})
-
-    @Html.LabelFor(model => model.Breed)
-    @Html.TextBoxFor(model => model.Breed)
-
-    <input type="submit" value="Add new animal" class="btn btn-default" />
-}
 <p>@Html.ActionLink("Show all animals", "Index")</p>

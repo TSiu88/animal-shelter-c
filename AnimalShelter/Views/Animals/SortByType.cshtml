@@ -6,7 +6,7 @@
 @model List<AnimalShelter.Models.Animal>;
 
 <div class="jumbotron">
-  <h1>Animals</h1>
+  <h2>Sort Animals by Type</h2>
 </div>
 
 @if (@Model.Count == 0)
@@ -18,16 +18,14 @@
 {
   <li>@Html.ActionLink($"ID: {animal.AnimalId}, Type: {animal.Type}, Name: {animal.Name} ","Details", new { id = animal.AnimalId })</li>
 }
-<div class="links4">
+<div class="links">
   <div class="link">
     <p>@Html.ActionLink("Add new animal", "Create")</p>
   </div>
   <div class="link">
-    <p>@Html.ActionLink("Sort animals by type", "SortByType")</p>
-  </div>
-  <div class="link">
-    <p>@Html.ActionLink("Sort animals by date of admittance", "SortByDate")</p>
+    <p>@Html.ActionLink("List of Animals", "Index")</p>
   </div>
   <div class="link">
     <p>@Html.ActionLink("Home", "Index", "Home")</p>
   </div>
+</div>

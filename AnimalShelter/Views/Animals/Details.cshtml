@@ -4,14 +4,26 @@
 
 @model AnimalShelter.Models.Animal
 
-<h2>Animal Details</h2>
+<div class="jumbotron">
+  <h2>Animal Details</h2>
+</div>
+
 <hr />
 <h3>@Html.DisplayNameFor(model => model.AnimalId): @Html.DisplayFor(model => model.AnimalId)</h3>
 <h3>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type)</h3>
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h3>@Html.DisplayNameFor(model => model.Gender): @Html.DisplayFor(model => model.Gender)</h3>
-<h3>@Html.DisplayNameFor(model => model.DateAdmittance): @Html.DisplayFor(model => model.DateAdmittance.Date)</h3>
+<h3>@Html.DisplayNameFor(model => model.DateAdmittance): @Html.DisplayFor(model => model.DateAdmittance, "ShortDateTime")</h3>
 <h3>@Html.DisplayNameFor(model => model.Breed): @Html.DisplayFor(model => model.Breed)</h3>
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Item", "Edit", new { id = Model.AnimalId })</p>
-<p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.AnimalId })</p>
+
+<div class="links">
+  <div class="link">
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+  </div>
+  <div class="link">
+    <p>@Html.ActionLink("Edit Item", "Edit", new { id = Model.AnimalId })</p>
+  </div>
+  <div class="link">
+    <p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.AnimalId })</p>
+  </div>
+</div>

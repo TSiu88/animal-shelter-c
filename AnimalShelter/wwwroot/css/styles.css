@@ -10,3 +10,23 @@ p{
 li{
   font-size: 20px;
 }
+
+.links{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.links4{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.link{
+  text-align: center;
+}
+
+.form{
+  font-size: 20px;
+}
