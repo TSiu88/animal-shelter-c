@@ -85,7 +85,21 @@ namespace AnimalShelter.Controllers
       List<Animal> sortedModel = new List<Animal>{};
       sortedModel = model.OrderBy(x => x.DateAdmittance).ToList();
       return View(sortedModel);
-    }    
+    }
+
+    public ActionResult Search()
+    {
+      Animal someAnimal = new Animal();
+      return View(someAnimal);
+    }
+
+    [HttpPost]
+     public ActionResult Search(string searchCriteria)
+     {
+      List<Animal> allModels = _db.Animals.ToList();
+      List<Animal> foundModels = allModels.FindAll(x => x.Type == searchCriteria);
+      return RedirectToAction("Index", foundModels);  
+     }
 
   }
 }
