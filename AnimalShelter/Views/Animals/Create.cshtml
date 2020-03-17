@@ -1,19 +1,28 @@
-@* @{
+@{
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Item
+@model AnimalShelter.Models.Animal
 
-<h4>Add a new task</h4>
+<h4>Add a new animal</h4>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description)
+    @Html.LabelFor(model => model.Type)
+    @Html.TextBoxFor(model => model.Type)
 
-    @Html.LabelFor(model => model.Category)
-    @Html.DropDownList("CategoryId")
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
 
-    <input type="submit" value="Add new item" class="btn btn-default" />
+    @Html.LabelFor(model => model.Gender)
+    @Html.TextBoxFor(model => model.Gender)
+
+    @Html.LabelFor(model => model.DateAdmittance)
+    @Html.TextBoxFor(model => model.DateAdmittance, new { @type = "date"})
+
+    @Html.LabelFor(model => model.Breed)
+    @Html.TextBoxFor(model => model.Breed)
+
+    <input type="submit" value="Add new animal" class="btn btn-default" />
 }
-<p>@Html.ActionLink("Show all items", "Index")</p> *@
+<p>@Html.ActionLink("Show all animals", "Index")</p>

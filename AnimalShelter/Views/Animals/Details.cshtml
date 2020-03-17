@@ -1,12 +1,17 @@
-@* @{
+@{
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Item
+@model AnimalShelter.Models.Animal
 
-<h2>Item Details</h2>
+<h2>Animal Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
+<h3>@Html.DisplayNameFor(model => model.AnimalId): @Html.DisplayFor(model => model.AnimalId)</h3>
+<h3>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type)</h3>
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.Gender): @Html.DisplayFor(model => model.Gender)</h3>
+<h3>@Html.DisplayNameFor(model => model.DateAdmittance): @Html.DisplayFor(model => model.DateAdmittance.Date)</h3>
+<h3>@Html.DisplayNameFor(model => model.Breed): @Html.DisplayFor(model => model.Breed)</h3>
 <p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Item", "Edit", new { id = Model.ItemId })</p>
-<p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.ItemId })</p> *@
+<p>@Html.ActionLink("Edit Item", "Edit", new { id = Model.AnimalId })</p>
+<p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.AnimalId })</p>

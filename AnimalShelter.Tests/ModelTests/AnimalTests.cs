@@ -11,13 +11,13 @@ namespace AnimalShelter.Tests
   {
     public void Dispose()
     {
-      Animal.ClearAll();
+      // Animal.ClearAll();
     }
 
-    public ItemTest()
-    {
-      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=epicodus;port=3306;database=to_do_list_test;";
-    }
+    // public ItemTest()
+    // {
+    //   DBConfiguration.ConnectionString = "server=localhost;user id=root;password=epicodus;port=3306;database=to_do_list_test;";
+    // }
 
     // [TestMethod]
     // public void ItemConstructor_CreatesInstanceOfItem_Item()

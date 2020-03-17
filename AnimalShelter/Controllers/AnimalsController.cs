@@ -18,56 +18,55 @@ namespace AnimalShelter.Controllers
 
     public ActionResult Index()
     {
-      List<Item> model = _db.Items.Include(items => items.Category).ToList();
+      List<Animal> model = _db.Animals.ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
-      ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
       return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Item item)
+    public ActionResult Create(Animal animal)
     {
-      _db.Items.Add(item);
+      _db.Animals.Add(animal);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Item thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-      return View(thisItem);
+      Animal thisAnimal = _db.Animals.FirstOrDefault(animal => animal.AnimalId == id);
+      return View(thisAnimal);
     }
 
     public ActionResult Edit(int id)
     {
-      var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-      ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-      return View(thisItem);
+      var thisAnimal = _db.Animals.FirstOrDefault(animal => animal.AnimalId == id);
+      // ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
+      return View(thisAnimal);
     }
 
     [HttpPost]
-    public ActionResult Edit(Item item)
+    public ActionResult Edit(Animal animal)
     {
-      _db.Entry(item).State = EntityState.Modified;
+      _db.Entry(animal).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-      return View(thisItem);
+      var thisAnimal = _db.Animals.FirstOrDefault(animal => animal.AnimalId == id);
+      return View(thisAnimal);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-      _db.Items.Remove(thisItem);
+      var thisAnimal = _db.Animals.FirstOrDefault(animal => animal.AnimalId == id);
+      _db.Animals.Remove(thisAnimal);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

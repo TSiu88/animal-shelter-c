@@ -1,24 +1,33 @@
-@* @{
+@{
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Item
+@model AnimalShelter.Models.Animal
 
 <h2>Edit</h2>
 
-<h4>Edit this task: @Html.DisplayFor(model => model.Description)</h4>
+<h4>Edit this animal's details: @Html.DisplayFor(model => model.AnimalId)</h4>
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.ItemId)
+    @Html.HiddenFor(model => model.AnimalId)
 
-    @Html.LabelFor(model => model.Description)
-    @Html.EditorFor(model => model.Description)
+    @Html.LabelFor(model => model.Type)
+    @Html.EditorFor(model => model.Type)
 
-    @Html.LabelFor(model => model.Category)
-    @Html.DropDownList("CategoryId")
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
 
+    @Html.LabelFor(model => model.Gender)
+    @Html.EditorFor(model => model.Gender)
+
+    @Html.LabelFor(model => model.DateAdmittance)
+    @Html.EditorFor(model => model.DateAdmittance, new { @type = "date"})
+
+    @Html.LabelFor(model => model.Breed)
+    @Html.EditorFor(model => model.Breed)    
+    
     <input type="submit" value="Save" />
 }
 
-<p>@Html.ActionLink("Back to list", "Index")</p> *@
+<p>@Html.ActionLink("Back to list", "Index")</p>

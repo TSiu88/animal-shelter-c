@@ -1,14 +1,15 @@
-@* @{
+@{
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Item
+@model AnimalShelter.Models.Animal
 
 <h2>Are you sure you want to delete this?</h2>
 
-@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+<h3>@Html.DisplayNameFor(model => model.AnimalId): @Html.DisplayFor(model => model.AnimalId)</h3>
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 @using (Html.BeginForm())
 {
     <input type="submit" value="Delete" />
 }
-@Html.ActionLink("Back to List", "Index") *@
+@Html.ActionLink("Back to List", "Index")
