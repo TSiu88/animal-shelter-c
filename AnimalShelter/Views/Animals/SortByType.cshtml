@@ -14,9 +14,22 @@
   <h3>No animals have been added yet!</h3>
 } 
 
-@foreach (Animal animal in Model)
-{
-  <li>@Html.ActionLink($"ID: {animal.AnimalId}, Type: {animal.Type}, Name: {animal.Name} ","Details", new { id = animal.AnimalId })</li>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Type</th>
+    <th>Name</th>
+  </tr>
+  
+  @foreach (Animal animal in Model)
+  {
+    <tr>
+      <td>@Html.ActionLink($"{animal.AnimalId} ","Details", new { id = animal.AnimalId })</td>
+      <td>@Html.ActionLink($"{animal.Type} ","Details", new { id = animal.AnimalId })</td>
+      <td>@Html.ActionLink($"{animal.Name} ","Details", new { id = animal.AnimalId })</td>
+    </tr>
+  }
+</table>
 }
 <div class="links">
   <div class="link">

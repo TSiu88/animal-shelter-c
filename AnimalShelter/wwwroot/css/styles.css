@@ -1,6 +1,18 @@
 body {
   margin: 0 auto;
   max-width: 1200px;
+  background-color: moccasin ;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 50pt;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 35pt;
 }
 
 p{
@@ -24,9 +36,48 @@ li{
 }
 
 .link{
+  margin-top: 20px;
   text-align: center;
 }
 
 .form{
   font-size: 20px;
+}
+
+.btn {
+  background-color: aqua;
+}
+
+table{
+  font-size: 20px;
+  border: 1px solid grey;
+  margin: auto;
+}
+
+th{
+  border: 1px solid grey;
+  background-color: lightgray;
+  padding: 5px;
+  text-align: center;
+}
+
+td {
+  width: 200px;
+  border: 1px solid grey;
+  padding: 5px;
+  text-align: center;
+}
+
+.tablename{
+  text-align: center;
+}
+
+a:hover{
+  font-weight: bold;
+  text-decoration: none;
+  color: saddlebrown;
+}
+
+a{
+  color: rgb(143, 80, 36);
 }
