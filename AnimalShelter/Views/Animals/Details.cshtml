@@ -8,6 +8,20 @@
   <h2>Animal Details</h2>
 </div>
 
+
+@if(Model.Type.ToLower() == "dog")
+{
+  <img class="img-fluid" src="https://www.sfreporter.com/resizer/HSNS3Lo_qGsmkXDAl6vBX34KWcs=/1500x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/sfr/wp-content/uploads/2019/11/01120517/Dog-Sweater-Nieto.jpg">
+}
+else if(Model.Type.ToLower() == "cat")
+{
+  <img class="img-fluid" src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg">
+}
+else
+{
+  <img class="img-fluid" src="https://www.marylandzoo.org/wp-content/uploads/2018/04/lemuranimaheader3.jpg">
+}
+
 <hr />
 <h3>@Html.DisplayNameFor(model => model.AnimalId): @Html.DisplayFor(model => model.AnimalId)</h3>
 <h3>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type)</h3>

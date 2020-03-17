@@ -6,7 +6,7 @@
 @model List<AnimalShelter.Models.Animal>;
 
 <div class="jumbotron">
-<h2>Animals found by Search</h2>
+  <h2>Animals found by Search</h2>
 </div>
 
 <table>
@@ -16,6 +16,11 @@
     <th>Name</th>
   </tr>
   
+  @if(@Model.Count == 0)
+  {
+    <h4>No animals matching search found!</h4>
+  }
+
   @foreach (Animal animal in Model)
   {
     <tr>
@@ -27,6 +32,9 @@
 </table>
 
 <div class="links">
+  <div class="link">
+    <p>@Html.ActionLink("Search for another animal", "Search")</p>
+  </div>
   <div class="link">
     <p>@Html.ActionLink("Add new animal", "Create")</p>
   </div>

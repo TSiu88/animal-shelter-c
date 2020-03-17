@@ -5,29 +5,34 @@
 @using AnimalShelter.Models;
 @model AnimalShelter.Models.Animal;
 
+<div class="jumbotron">
+  <h2>Search Animals</h2>
+</div>
+
 <div class="form">
   @using (Html.BeginForm("SearchResults", "Animals", FormMethod.Post))
   {
-    @Html.RadioButtonFor(Model => Model.Property,"AnimalId")
-    @Html.Label("By ID")
-    <br>
-    @Html.RadioButtonFor(Model => Model.Property,"Type") 
-    @Html.Label("By Type")
-    <br>
-    @Html.RadioButtonFor(Model => Model.Property,"Name") 
-    @Html.Label("By Name")
-    <br>
-    @Html.RadioButtonFor(Model => Model.Property,"Gender") 
-    @Html.Label("By Gender")
-    <br>
-    @Html.RadioButtonFor(Model => Model.Property,"DateAdmittance") 
-    @Html.Label("By Date (MM/DD/YYYY)")
-    <br>
-    @Html.RadioButtonFor(Model => Model.Property,"Breed") 
-    @Html.Label("By Breed")  
-    <br>
     @Html.Label("Search Criteria")
     @Html.TextBoxFor(model => model.Name)
+    <br>
+    @Html.RadioButtonFor(Model => Model.Type,"AnimalId")
+    @Html.Label("By ID")
+    <br>
+    @Html.RadioButtonFor(Model => Model.Type,"Type") 
+    @Html.Label("By Type")
+    <br>
+    @Html.RadioButtonFor(Model => Model.Type,"Name") 
+    @Html.Label("By Name")
+    <br>
+    @Html.RadioButtonFor(Model => Model.Type,"Gender") 
+    @Html.Label("By Gender")
+    <br>
+    @Html.RadioButtonFor(Model => Model.Type,"DateAdmittance") 
+    @Html.Label("By Date (MM/DD/YYYY)")
+    <br>
+    @Html.RadioButtonFor(Model => Model.Type,"Breed") 
+    @Html.Label("By Breed")  
+    <br>
 
     <input type="submit" value="Find animal" class="btn btn-default" />
   }

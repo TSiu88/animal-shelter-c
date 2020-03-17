@@ -100,28 +100,28 @@ namespace AnimalShelter.Controllers
     List<Animal> allModels = _db.Animals.ToList();
     List<Animal> foundModels = new List <Animal>{};
     
-    if (searchAnimal.Property == "AnimalId")
+    if (searchAnimal.Type == "AnimalId")
     {
       foundModels = allModels.FindAll(x => x.AnimalId.ToString() == searchCriteria);
     }
-    else if (searchAnimal.Property == "Type")
+    else if (searchAnimal.Type == "Type")
     {
       foundModels = allModels.FindAll(x => x.Type.ToLower() == searchCriteria);
     }
-    else if (searchAnimal.Property == "Name")
+    else if (searchAnimal.Type == "Name")
     {
       foundModels = allModels.FindAll(x => x.Name.ToLower() == searchCriteria);
     }
-    else if (searchAnimal.Property == "Gender")
+    else if (searchAnimal.Type == "Gender")
     {
       foundModels = allModels.FindAll(x => x.Gender.ToLower() == searchCriteria);
     }
-    else if (searchAnimal.Property == "DateAdmittance")
+    else if (searchAnimal.Type == "DateAdmittance")
     {
       DateTime searchDate = DateTime.Parse(searchCriteria);
       foundModels = allModels.FindAll(x => x.DateAdmittance == searchDate);
     }
-    else if (searchAnimal.Property == "Breed")
+    else if (searchAnimal.Type == "Breed")
     {
       foundModels = allModels.FindAll(x => x.Breed.ToLower() == searchCriteria);
     }        
