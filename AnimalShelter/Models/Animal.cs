@@ -11,6 +11,8 @@ namespace AnimalShelter.Models
     public string Name { get; set; }
     public string Gender { get; set; }
 
+    public string Property {get; set; }
+
     [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
     public DateTime DateAdmittance { get; set; }
 

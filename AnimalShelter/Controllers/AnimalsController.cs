@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using AnimalShelter.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -95,9 +96,35 @@ namespace AnimalShelter.Controllers
     [HttpPost]
     public ActionResult SearchResults(Animal searchAnimal)
     {
-    string searchCriteria = searchAnimal.Type.ToLower();
+    string searchCriteria = searchAnimal.Name.ToLower();
     List<Animal> allModels = _db.Animals.ToList();
-    List<Animal> foundModels = allModels.FindAll(x => x.Type.ToLower() == searchCriteria);
+    List<Animal> foundModels = new List <Animal>{};
+    
+    if (searchAnimal.Property == "AnimalId")
+    {
+      foundModels = allModels.FindAll(x => x.AnimalId.ToString() == searchCriteria);
+    }
+    else if (searchAnimal.Property == "Type")
+    {
+      foundModels = allModels.FindAll(x => x.Type.ToLower() == searchCriteria);
+    }
+    else if (searchAnimal.Property == "Name")
+    {
+      foundModels = allModels.FindAll(x => x.Name.ToLower() == searchCriteria);
+    }
+    else if (searchAnimal.Property == "Gender")
+    {
+      foundModels = allModels.FindAll(x => x.Gender.ToLower() == searchCriteria);
+    }
+    else if (searchAnimal.Property == "DateAdmittance")
+    {
+      DateTime searchDate = DateTime.Parse(searchCriteria);
+      foundModels = allModels.FindAll(x => x.DateAdmittance == searchDate);
+    }
+    else if (searchAnimal.Property == "Breed")
+    {
+      foundModels = allModels.FindAll(x => x.Breed.ToLower() == searchCriteria);
+    }        
     return View(foundModels);  
     }
   }

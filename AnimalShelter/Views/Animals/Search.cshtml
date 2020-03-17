@@ -8,17 +8,27 @@
 <div class="form">
   @using (Html.BeginForm("SearchResults", "Animals", FormMethod.Post))
   {
-    @* @Html.RadioButtonFor(a => a.Search,"AnimalId")
-    @Html.RadioButtonFor(a => a.Search,"Type") 
-    @Html.RadioButtonFor(a => a.Search,"Name") 
-    @Html.RadioButtonFor(a => a.Search,"Gender") 
-    @Html.RadioButtonFor(a => a.Search,"DateAdmittance") 
-    @Html.RadioButtonFor(a => a.Search,"Breed")    *@
-    @Html.LabelFor(model => model.Type)
-    @Html.TextBoxFor(model => model.Type)
+    @Html.RadioButtonFor(Model => Model.Property,"AnimalId")
+    @Html.Label("By ID")
+    <br>
+    @Html.RadioButtonFor(Model => Model.Property,"Type") 
+    @Html.Label("By Type")
+    <br>
+    @Html.RadioButtonFor(Model => Model.Property,"Name") 
+    @Html.Label("By Name")
+    <br>
+    @Html.RadioButtonFor(Model => Model.Property,"Gender") 
+    @Html.Label("By Gender")
+    <br>
+    @Html.RadioButtonFor(Model => Model.Property,"DateAdmittance") 
+    @Html.Label("By Date (MM/DD/YYYY)")
+    <br>
+    @Html.RadioButtonFor(Model => Model.Property,"Breed") 
+    @Html.Label("By Breed")  
+    <br>
+    @Html.Label("Search Criteria")
+    @Html.TextBoxFor(model => model.Name)
 
-    @* @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name) *@
     <input type="submit" value="Find animal" class="btn btn-default" />
   }
 
