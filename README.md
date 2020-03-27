@@ -1,6 +1,6 @@
 # _[Animal Shelter](https://github.com/BelyyBrat/animal-shelter-c)_
 
-#### _Brief desc of Project, 03.17.2020_
+#### _Database with Entity Framework, 03.17.2020_
 
 #### By _**Tiffany Siu and Andriy Veremyeyev**_
 
@@ -22,16 +22,19 @@
 ---
 ## Description
 
+This application was to practice MySQL databases with Entity Framework.  This program tracks animals in an animal shelter.
+
 #### 3/17 Work from Home Summary
 - Work on Animal Shelter
   - Add extra functions of Search and Sort
   - Add extra CSS styling
 - Struggles: DateTime formatting, radio buttons, search function implementation, search function for dates, EditorFor and TextboxFor HTML helper function parameters, Git mob
 
-_README under construction_
-<!-- _Detailed desc w/ purpose/usage, what does, motivation to create, why exists, other info for users/developers to have_ -->
-
 ## Setup/Installation Requirements
+
+_This program requires .NET Core SDK to run. [Here is a free tutorial](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-c-and-net) for installing .NET on Mac or Windows 10 from the [official website](https://dotnet.microsoft.com/download/dotnet-core/)._ 
+
+_This program also makes use of SQL databases. We recommend using MySQL Workbench to build your databases. [Here is a free tutorial](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql) for installing MySQL WorkBench and MySQL Community Server on Mac (using links [Mac1](https://dev.mysql.com/downloads/file/?id=484914) and [Mac2](https://dev.mysql.com/downloads/file/?id=484391)) or [Windows 10](https://dev.mysql.com/downloads/file/?id=484919)._
 
 ### Requirements to Run
 * _.NET Core_
@@ -59,28 +62,6 @@ _README under construction_
 * _MySQL Workbench_
 * _Entity Framework_
 * _Markdown_
-
-## Notable Features
-<!-- _features that make project stand out_ -->
-
-## Specifications
-
-<!-- * _List of features the program should do, from simplest to more complex, handling all possible cases.  Can do as text or put in table, with example input and output_
-  * _Example Input: expected input_
-  * _Example Output: expected output_
--->
-
-## Screenshots
-
-<!-- _Here is a snippet of what the input looks like:_
-
-![Snippet of input fields](img/snippet1.png)
-
-_Here is a preview of what the output looks like:_
-
-![Snippet of output box](img/snippet2.png) -->
-
-<!-- _{Show pictures using ![alt text](image.jpg), show what library does as concisely as possible but don't need to explain how project solves problem from `code`_ -->
 
 ## Known Bugs
 
